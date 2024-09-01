@@ -1,32 +1,66 @@
 # Phase-3-Project
-## **Background**
+## **Analyzing Predictive Factors and Bias in Arrest Outcomes During Terry Stops: A Classification Approach**
 
-Terry v. Ohio, a landmark U.S. Supreme Court case decided in 1968, established the principle of **"reasonable suspicion,"** which allows police officers to temporarily detain individuals based on suspicious behavior, even in the absence of probable cause required for arrest. These stops, known as **Terry Stops**, have become a standard police practice, particularly in situations involving suspicious drivers. While Terry Stops are intended to prevent crime and ensure public safety, they have also raised significant concerns about potential bias in law enforcement, particularly regarding **race and gender**.
+**Student Name:** Mutisya Faith Mwende  
+**Student Pace:** Part-time  
 
-In recent years, the role of race and other demographic factors in policing has come under intense scrutiny. Research has suggested that certain demographic groups may be disproportionately affected by police practices, leading to questions about the fairness and objectivity of these interactions. This project aims to explore these issues by building a machine learning classifier to predict whether an arrest was made during a Terry Stop are affected by presence of weapons, time of day, gender, and race.
+### **Background**
 
-## **Problem Statement**
+The Terry v. Ohio case established the concept of "reasonable suspicion," permitting police officers to briefly detain individuals based on suspicious behavior without probable cause. These stops, known as Terry Stops, are common in policing, particularly for suspected criminal activity. However, concerns about potential biases—particularly related to race and gender—have emerged. This project aims to use machine learning to predict arrest outcomes during Terry Stops and explore how demographic factors influence these outcomes.
 
-While Terry Stops are legally justified under the principle of "reasonable suspicion," there is ongoing debate about whether these stops are conducted in a manner that is free from bias. The core problem this project seeks to address is whether certain factors, particularly race and gender, disproportionately influence the likelihood of arrest during a Terry Stop. Understanding these dynamics is crucial for law enforcement agencies, policymakers, and the public as they work to ensure that policing practices are fair, transparent, and just.
+### **Problem Statement**
 
-This project will focus on developing a classification model to predict arrest outcomes during Terry Stops. The model will analyze various factors, including demographic information, to determine which variables most strongly influence the likelihood of an arrest. By doing so, the project aims to shed light on potential biases in policing practices and offer insights that could guide more equitable law enforcement strategies.
+The project investigates whether demographic factors, such as race and gender, influence the likelihood of arrest during a Terry Stop. Understanding these factors is crucial for assessing whether policing practices are equitable and free from bias. The goal is to develop a classification model to predict arrest outcomes based on various features and identify any potential biases.
 
-## **Objectives**
+### **Objectives**
 
-1. **Data Exploration and Understanding**:
-   - This will involve analyzing the distribution of key variables, particularly those related to demographics such as race and gender, as well as other critical factors like the presence of weapons and the time of day. Additionally, any data quality issues, such as missing values or outliers, will be identified and appropriately addressed to ensure the reliability of the analysis and subsequent modeling.
+1. **Data Exploration and Understanding**: Analyze key variables, including demographics, weapon presence, and time of day, and address any data quality issues.
+   
+2. **Model Development**: Build and evaluate classification models using logistic regression and decision trees to predict arrest outcomes.
 
-2. **Model Development**:
-   - Build a baseline classification model using logistic regression to predict whether an arrest was made during a Terry Stop.
-   - Develop a decision tree model as an alternative approach, comparing its performance with the logistic regression model.
+3. **Feature Importance Analysis**: Identify influential features in predicting arrest outcomes, with a focus on demographic factors.
 
-3. **Feature Importance Analysis**:
-   - This will involve identifying the most influential features in predicting arrest outcomes, with particular attention given to demographic factors such as race and gender. Sensitivity analyses will be performed to assess how changes in these key features impact the model’s predictions, providing deeper insights into the factors driving arrest decisions during Terry Stops.
+4. **Evaluation of Model Performance**: Use classification metrics to assess model accuracy, precision, recall, and F1-score, and compare performance between models.
 
-4. **Evaluation of Model Performance**:
+5. **Ethical Considerations and Recommendations**: Discuss potential biases in the use of demographic data and provide recommendations for fairer policing practices.
 
-   - This will be done using appropriate classification metrics, including accuracy, precision, recall, and the F1 score.  By comparing the performance of the logistic regression and decision tree models, the project will determine the most effective approach for predicting arrest outcomes in the context of Terry Stops.
+### **Data Exploration and Understanding**
 
-5. **Ethical Considerations and Recommendations**:
-   - Discuss the ethical implications of using demographic data in predictive policing models, with a focus on the potential for bias and discrimination.
-   - Provide recommendations for law enforcement agencies based on the findings, aimed at promoting fairer and more transparent policing practices.
+- **Dataset**: The dataset includes attributes such as subject age group, officer details, stop resolution, and arrest indicators.
+- **Missing Values**: Identified and addressed through data cleaning processes.
+- **Feature Analysis**: Key features include perceived race and gender of subjects, officer demographics, weapon type, and time of day.
+
+### **Data Cleaning and Preprocessing**
+
+- **Missing Values**: Dropped null values.
+- **Categorical Encoding**: Converted categorical variables to numerical values using label encoding.
+- **Feature Scaling and Transformation**: Applied standard scaling and one-hot encoding to numerical and categorical features respectively.
+
+### **Modeling**
+
+1. **Logistic Regression**:
+   - **Accuracy**: 89.57%
+   - **Performance**: High accuracy for negative cases, lower for positive cases, suggesting potential class imbalance.
+
+2. **Decision Tree**:
+   - **Accuracy**: 88%
+   - **Performance**: Similar to logistic regression, effective for negative cases but less accurate for positive cases.
+   - **Feature Importance**: Provided insights into the influence of various features on arrest outcomes.
+
+### **Visualizations**
+
+- **Confusion Matrix Heatmap**: Shows strong performance for 'N' (negative) cases and weaker performance for 'Y' (positive) cases.
+- **Precision, Recall, and F1-Score Bar Plot**: Highlights high precision and recall for negative cases and low scores for positive cases.
+- **ROC Curve**: An AUC of 0.69 indicates moderate model performance, with room for improvement.
+
+### **Conclusion and Recommendations**
+
+**Conclusion**: The models performed well in identifying negative cases but struggled with positive cases. This suggests an imbalance in the dataset or challenges in predicting positive cases.
+
+**Recommendations**:
+1. **Address Class Imbalance**: Use techniques such as resampling or algorithms designed for imbalanced data.
+2. **Ethical Considerations**: Incorporate fairness metrics and advocate for transparency in policing practices.
+3. **Further Analysis**: Investigate the impact of each demographic variable and explore additional factors like time and location.
+4. **Stakeholder Collaboration**: Engage with law enforcement and community representatives to discuss findings and develop actionable strategies.
+
+Implementing these recommendations can enhance model effectiveness and contribute to more equitable policing practices.
