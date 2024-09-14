@@ -1,4 +1,3 @@
-# Phase-3-Project
 ## **Analyzing Predictive Factors and Bias in Arrest Outcomes During Terry Stops: A Classification Approach**
 
 **Student Name:** Mutisya Faith Mwende  
